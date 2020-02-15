@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>asset/ethIcon.png</file>
+    </qresource>
+</RCC>

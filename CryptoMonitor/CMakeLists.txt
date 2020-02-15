@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(CryptoMonitor LANGUAGES CXX)
+project(CryptoMonitorGog LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -27,21 +27,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 if(ANDROID)
-  add_library(CryptoMonitor SHARED
+  add_library(CryptoMonitorGog SHARED
     main.cpp
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    ./util/Parser.cpp
   )
 else()
-  add_executable(CryptoMonitor
+  add_executable(CryptoMonitorGog
     main.cpp
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    ./util/Parser.cpp
+    ./asset/images.qrc
   )
 endif()
 
-target_link_libraries(CryptoMonitor PRIVATE Qt5::Widgets)
+target_link_libraries(CryptoMonitorGog PRIVATE Qt5::Widgets)
