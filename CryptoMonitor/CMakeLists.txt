@@ -25,6 +25,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(OpenSSL REQUIRED)
 
 if(ANDROID)
   add_library(CryptoMonitorGog SHARED
@@ -32,6 +33,13 @@ if(ANDROID)
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    ./asset/images.qrc
+    ./settings/settingswindow.cpp
+    ./settings/settingswindow.h
+    ./settings/settingswindow.ui
+    ./http/coinmarketcap.h
+    ./http/coimarketcap.cpp
+    ./nlohmann/json.hpp
   )
 else()
   add_executable(CryptoMonitorGog
@@ -40,7 +48,14 @@ else()
     mainwindow.h
     mainwindow.ui
     ./asset/images.qrc
+    ./settings/settingswindow.cpp
+    ./settings/settingswindow.h
+    ./settings/settingswindow.ui
+    ./http/coinmarketcap.h
+    ./http/coinmarketcap.cpp
+    ./nlohmann/json.hpp
   )
 endif()
 
 target_link_libraries(CryptoMonitorGog PRIVATE Qt5::Widgets)
+target_link_libraries(CryptoMonitorGog PRIVATE OpenSSL::SSL)

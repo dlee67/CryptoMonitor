@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "./settings/settingswindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,9 +14,15 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void generateTopTen();
+    void generateNewCoin(QString* dateText, const QString& priceText, QString* diffText);
     ~MainWindow();
+
+private slots:
+    void on_settings_clicked();
 
 private:
     Ui::MainWindow *ui;
+    Ui::SettingsWindow *settingsUi;
 };
 #endif // MAINWINDOW_H
