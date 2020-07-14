@@ -9,5 +9,6 @@ Application won't work at the moment, due to the reason that we've excluded the 
 
 We used Qt and CoinMarket API. <br/><br/>
 
-Lotus did majority of the heavy lifting.
-https://github.com/loetus
+~~Lotus did majority of the heavy lifting.
+https://github.com/loetus~~
+He deleted his Github account ...
